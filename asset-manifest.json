@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ReactTS-BoardGame/static/css/main.37ecb287.css",
-    "main.js": "/ReactTS-BoardGame/static/js/main.3c2f9621.js",
+    "main.js": "/ReactTS-BoardGame/static/js/main.3350a0ee.js",
     "index.html": "/ReactTS-BoardGame/index.html",
     "main.37ecb287.css.map": "/ReactTS-BoardGame/static/css/main.37ecb287.css.map",
-    "main.3c2f9621.js.map": "/ReactTS-BoardGame/static/js/main.3c2f9621.js.map"
+    "main.3350a0ee.js.map": "/ReactTS-BoardGame/static/js/main.3350a0ee.js.map"
   },
   "entrypoints": [
     "static/css/main.37ecb287.css",
-    "static/js/main.3c2f9621.js"
+    "static/js/main.3350a0ee.js"
   ]
 }
