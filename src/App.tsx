@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Score from './components/Score';
+import Board from './components/Board';
+import { useState } from 'react';
+
+
+const cardIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+cardIds.sort(() => 0.5 - Math.random())
+console.log(cardIds);
 
 function App() {
+
+  const [moves, setMoves] = useState<number>(0)
+  const [bestScore, setBestScore] = useState<number>(
+    parseInt(localStorage.getItem('bestScore') || '0') || Number.MAX_SAFE_INTEGER
+  )
+  const finishGameCallback = () => {
+    const newBestScore = moves < bestScore ? moves : bestScore
+    setBestScore(newBestScore)
+    localStorage.setItem('bestScore', '' + newBestScore)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <Score 
+        moves={moves} 
+        bestScore={bestScore}
+      />
+      <Board 
+        setMoves={setMoves} 
+        finishGameCallback={finishGameCallback} 
+        cardIds={cardIds}
+      />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
